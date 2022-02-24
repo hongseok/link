@@ -20,7 +20,7 @@
         var ul = document.getElementById("params")
         urlParams.forEach(function(value, key) {
           var li = document.createElement("li");
-          var text = document.createTextNode("key=" + key + " / value=" + value);
+          var text = document.createTextNode(key + " = " + value);
           li.appendChild(text);
           ul.appendChild(li);
         })

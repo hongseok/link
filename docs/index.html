@@ -6,8 +6,25 @@
     <title>My test page</title>
   </head>
   <body>
-    <p>This is my page</p>
+    <h3>Source URL</h3>
+    <p id="sourceurl"></p>
+    <h3>Parameters</h3>
+    <ul id="params"></ul>
+    <script type="text/javascript">
+      window.onload = function() {
+        document.getElementById("sourceurl").innerHTML = window.location;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        // const message = urlParams.get("message")
+        
+        var ul = document.getElementById("params")
+        urlParams.forEach(function(value, key) {
+          var li = document.createElement("li");
+          var text = document.createTextNode("key=" + key + " / value=" + value);
+          li.appendChild(text);
+          ul.appendChild(li);
+        })
+      }
+    </script>
   </body>
 </html>
-
-
